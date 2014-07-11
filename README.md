@@ -1,4 +1,4 @@
 CheezyThePig
 ============
 
-Mini platformer game using Fresh Flesh game enfine
+Mini platformer game using Fresh Flesh game engine
