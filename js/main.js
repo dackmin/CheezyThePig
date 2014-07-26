@@ -34,15 +34,21 @@ assets = [
 	//LOGOS
 	"res/img/logos/dackmin.png",
 	"res/img/logos/freshflesh.png",
+	"res/img/logos/cheezy.png",
 
 	//MAIN MENU
 	"res/img/menu/bg_grasslands.png",
+	"res/img/menu/foreground.png",
 	"res/img/menu/new_game.png",
 	"res/img/menu/new_game_hover.png",
 	"res/img/menu/settings.png",
 	"res/img/menu/settings_hover.png",
 	"res/img/menu/cheezy-logo.png",
 	"res/img/menu/grassMid.png",
+	"res/img/menu/star.png",
+	"res/img/menu/cloud1.png",
+	"res/img/menu/cloud2.png",
+	"res/img/menu/cloud3.png",
 
 	//PAUSE MENU
 	"res/img/pause/bg.png",
@@ -104,7 +110,7 @@ window.onload = function(){
 		//Create our gamestates
 		GS_INTRO = new IntroGameState();
 		//GS_SETTINGS = new SettingsGameState();
-		//GS_MENU = new MenuGameState();
+		GS_MENU = new MenuGameState();
 		//GS_MAIN = new MainGameState();
 
 		//Then create our fantastic game manager
