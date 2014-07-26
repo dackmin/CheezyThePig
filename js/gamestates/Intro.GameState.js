@@ -6,8 +6,8 @@ function IntroGameState(){
 
 		//DACKMIN logo
 		logo1 = new FF.Sprite({ image : "res/img/logos/dackmin.png" });
-		logo1.x = FF.Render.getWidth() / 2  - logo1.rect().width / 2;
-		logo1.y = FF.Render.getHeight() / 2  - logo1.rect().height / 2;
+		logo1.x = FF.Util.getCenterFromItem(logo1);
+		logo1.y = FF.Util.getCenterFromItem(logo1, true);
 		logo1.alpha = 0;
 
 		anim1_up = new FF.Animation(logo1, 500, { opacity : 1 });
@@ -22,8 +22,8 @@ function IntroGameState(){
 
 		//FRESHFLESH LOGO
 		logo2 = new FF.Sprite({ image : "res/img/logos/freshflesh.png" });
-		logo2.x = FF.Render.getWidth() / 2  - logo2.rect().width / 2;
-		logo2.y = FF.Render.getHeight() / 2  - logo2.rect().height / 2;
+		logo2.x = FF.Util.getCenterFromItem(logo2);
+		logo2.y = FF.Util.getCenterFromItem(logo2, true);
 		logo2.alpha = 0;
 
 		anim2_up = new FF.Animation(logo2, 500, { opacity : 1 });
@@ -33,6 +33,7 @@ function IntroGameState(){
 
 		anim2_down = new FF.Animation(logo2, 500, { opacity:0 });
 		anim2_down.addEventListener("end", function(){
+			GAME.switchGameState(GS_MENU);
 		});
 
 		anim1_up.start();
