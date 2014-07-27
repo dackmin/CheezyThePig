@@ -49,6 +49,9 @@ assets = [
 	"res/img/menu/cloud1.png",
 	"res/img/menu/cloud2.png",
 	"res/img/menu/cloud3.png",
+	"res/img/menu/howto.png",
+	"res/img/menu/howto-keyboard.png",
+	"res/img/menu/howto-controller.png",
 
 	//PAUSE MENU
 	"res/img/pause/bg.png",

@@ -2,7 +2,7 @@ function MenuGameState(){
 
 	var backgrounds = [], background_sprite, grounds = [], ground_sprite, foreground, cheezy, cheezy_moves, cheezy_logo, cheezy_logo_scaleUp, cheezy_logo_scaleDown;
 	var possible_clouds = ["res/img/menu/cloud1.png","res/img/menu/cloud2.png","res/img/menu/cloud3.png"], cloud_count = 10, clouds_min_y = 0, clouds_max_y = 400, clouds = [], clouds_speed = 1;
-	var play_button, settings_button, star;
+	var play_button, settings_button, star, howto, howto_keyboard, howto_controller;
 
 	this.setup = function(){
 
@@ -22,6 +22,31 @@ function MenuGameState(){
 		foreground = new FF.Sprite({ image : "res/img/menu/foreground.png" });
 		foreground.x = FF.Util.getCenterFromItem(foreground);
 		foreground.y = FF.Render.getHeight() - foreground.rect().height;
+
+
+		//Setup "howto" sign
+		howto = new FF.Sprite({ image : "res/img/menu/howto.png" });
+		howto.x = foreground.rect().x + 150;
+		howto.y = foreground.rect().y + 290;
+		howto.rotate = 25;
+
+		howto_keyboard = new FF.Sprite({ image : "res/img/menu/howto-keyboard.png" });
+		howto_keyboard.x = foreground.rect().x - 30;
+		howto_keyboard.y = foreground.rect().y;
+		howto_keyboard.hidden = true;
+
+		howto_controller = new FF.Sprite({ image : "res/img/menu/howto-controller.png" });
+		howto_controller.x = foreground.rect().x - 30;
+		howto_controller.y = foreground.rect().y;
+		howto_controller.hidden = true;
+
+		howto.addEventListener("mouseover", function(){
+			if(FF.InputManager.isAGamepadConnected())
+				howto_controller.hidden = false;
+			else
+				howto_keyboard.hidden = false;
+		});
+		howto.addEventListener("mouseout", function(){ howto_keyboard.hidden = true; howto_controller.hidden = true; });
 
 
 		//Setup ground
@@ -104,38 +129,72 @@ function MenuGameState(){
 	};
 
 	this.update = function(){
+
+		//Check mouse position to change Cheezy profile
 		if(FF.InputManager.mouse_x > FF.Render.getWidth() / 2) cheezy.setFrame(cheezy.right.next());
 		else cheezy.setFrame(cheezy.left.next());
 
+
+		//Move clouds
 		for(var i in clouds){
 			clouds[i].x-= clouds_speed;
-			if(clouds[i].x < 0) clouds[i].x = FF.Render.getWidth();
+			if(clouds[i].x < 0 - clouds[i].rect().width){
+				clouds[i].x = FF.Render.getWidth();
+				clouds[i].y = FF.Util.random(clouds_min_y, clouds_max_y);
+			}
 		}
 
+
+		//Animate a bit the logo, it's really better with
 		cheezy_logo_scaleUp.update();
 		cheezy_logo_scaleDown.update();
-
 		cheezy_logo.x = FF.Render.getWidth() / 2 - cheezy_logo.rect().width / 2;
 
+
+		//Update Howoto sign to check on mouse events
+		howto.update();
+
+
+		//Same shit
 		play_button.update();
 		settings_button.update();
 	};
 
 	this.draw = function(){
+
+		//Draw background, lol
 		for(var i in backgrounds) backgrounds[i].draw();
+
+
+		//Draw clouds behind everything else but background, avoiding them to overlay anything
 		for(var i in clouds) clouds[i].draw();
+
+
+		//Draw foreground
+		howto.draw();
 		foreground.draw();
 		for(var i in grounds) grounds[i].draw();
 
+
+		//Draw play instructions on top of foreground (avoiding foreground overlaying it if screen height is not "heighty" enough)
+		howto_keyboard.draw();
+		howto_controller.draw();
+
+
+		//Draw cheezy and its logo
 		cheezy.draw();
 		cheezy_logo.draw();
 
-		play_button.draw();
 
+		//Draw buttons
+		play_button.draw();
+		settings_button.draw();
+
+
+		//Draw stars without creating 2 stars objects
 		star.draw();
 		star.drawSomewhere(star.rect().x + play_button.rect().width, star.rect().y);
 
-		settings_button.draw();
 	};
 
 };
