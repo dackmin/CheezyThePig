@@ -90,8 +90,8 @@ function MenuGameState(){
 		cheezy_logo.x = FF.Util.getCenterFromItem(cheezy_logo);
 		cheezy_logo.y = FF.Render.getHeight() - foreground.rect().height;
 
-		cheezy_logo_scaleUp = new FF.Animation(cheezy_logo, 500, { scale : 1.05 });
-		cheezy_logo_scaleDown = new FF.Animation(cheezy_logo, 500, { scale : 1 });
+		cheezy_logo_scaleUp = new FF.Animation(cheezy_logo, 500, { scale : 1.05, ease : "easeInBounce" });
+		cheezy_logo_scaleDown = new FF.Animation(cheezy_logo, 500, { scale : 1, ease : "easeOutBounce" });
 
 		cheezy_logo_scaleUp.addEventListener("end", function(){ cheezy_logo_scaleDown.start(); });
 		cheezy_logo_scaleDown.addEventListener("end", function(){ cheezy_logo_scaleUp.start(); });
