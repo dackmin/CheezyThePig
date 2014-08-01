@@ -6,6 +6,7 @@ var
 	GAME,
 	GS_INTRO,
 	GS_MENU,
+	GS_MAIN,
 	GS_LEVEL_INDEX = 0;
 
 
@@ -114,7 +115,7 @@ window.onload = function(){
 		GS_INTRO = new IntroGameState();
 		//GS_SETTINGS = new SettingsGameState();
 		GS_MENU = new MenuGameState();
-		//GS_MAIN = new MainGameState();
+		GS_MAIN = new MainGameState();
 
 		//Then create our fantastic game manager
 		GAME = new FF.Game(GS_INTRO, { backgroundColor : "#000" });
