@@ -4,7 +4,7 @@
   <property name="timeout" value="100"/>
  </properties>
  <tileset firstgid="1" name="main" tilewidth="70" tileheight="70">
-  <image source="../img/tilesets/main-tileset.png" width="1400" height="700"/>
+  <image source="res/img/tilesets/main-tileset.png" width="1400" height="700"/>
  </tileset>
  <layer name="foreground" width="200" height="40">
   <data>
