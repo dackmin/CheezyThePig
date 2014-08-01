@@ -130,6 +130,8 @@ function MenuGameState(){
 
 	this.update = function(){
 
+		document.getElementById("fps").innerHTML = GAME.fps+" fps";
+
 		//Check mouse position to change Cheezy profile
 		if(FF.InputManager.mouse_x > FF.Render.getWidth() / 2) cheezy.setFrame(cheezy.right.next());
 		else cheezy.setFrame(cheezy.left.next());
@@ -194,7 +196,6 @@ function MenuGameState(){
 		//Draw stars without creating 2 stars objects
 		star.draw();
 		star.drawSomewhere(star.rect().x + play_button.rect().width, star.rect().y);
-
 	};
 
 };
