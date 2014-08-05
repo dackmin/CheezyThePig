@@ -16029,34 +16029,138 @@
   <properties>
    <property name="drawable" value="false"/>
   </properties>
-  <object gid="110" x="1947" y="2659"/>
-  <object gid="110" x="2025" y="2659"/>
-  <object gid="110" x="2091" y="2659"/>
-  <object gid="110" x="2165" y="2659"/>
-  <object gid="110" x="2237" y="2659"/>
-  <object gid="110" x="3365" y="2589"/>
-  <object gid="110" x="3698" y="2449"/>
+  <object gid="110" x="1947" y="2659">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="2025" y="2659">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="2091" y="2659">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="2165" y="2659">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="2237" y="2659">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="3365" y="2589">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="3698" y="2449">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
   <object gid="110" x="2675" y="2169"/>
   <object gid="110" x="2738" y="2169"/>
-  <object gid="110" x="4691" y="1749"/>
-  <object gid="110" x="4346" y="2660"/>
-  <object gid="110" x="4410" y="2660"/>
-  <object gid="110" x="4474" y="2660"/>
-  <object gid="110" x="4873" y="2140"/>
-  <object gid="110" x="4930" y="2110"/>
-  <object gid="110" x="5018" y="2109"/>
-  <object gid="110" x="5083" y="2172"/>
-  <object gid="110" x="5107" y="2243"/>
-  <object gid="110" x="5112" y="2340"/>
-  <object gid="110" x="5806" y="2589"/>
-  <object gid="110" x="5877" y="2589"/>
-  <object gid="110" x="5950" y="2589"/>
-  <object gid="110" x="6021" y="2589"/>
-  <object gid="110" x="6092" y="2589"/>
-  <object gid="110" x="6163" y="2589"/>
-  <object gid="110" x="6647" y="2729"/>
-  <object gid="110" x="6505" y="2729"/>
-  <object gid="110" x="6576" y="2729"/>
+  <object gid="110" x="4691" y="1749">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="4346" y="2660">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="4410" y="2660">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="4474" y="2660">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="4873" y="2140">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="4930" y="2110">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="5018" y="2109">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="5083" y="2172">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="5107" y="2243">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="5112" y="2340">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="5806" y="2589">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="5877" y="2589">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="5950" y="2589">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="6021" y="2589">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="6092" y="2589">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="6163" y="2589">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="6647" y="2729">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="6505" y="2729">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
+  <object gid="110" x="6576" y="2729">
+   <properties>
+    <property name="type" value="coin"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="actions" width="100" height="40">
   <object gid="68" x="6850" y="2729">
