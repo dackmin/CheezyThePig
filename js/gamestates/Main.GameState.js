@@ -98,7 +98,7 @@ function MainGameState(){
 
 
 		//Get pickups
-		//try{
+		try{
 			var stuff = levels[current_level].getObjectGroup("pieces").objects;
 			for(var i in stuff){
 
@@ -113,7 +113,7 @@ function MainGameState(){
 						break;
 				}
 			}
-		//} catch(e){}
+		} catch(e){}
 	};
 
 };
