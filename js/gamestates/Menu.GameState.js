@@ -196,6 +196,8 @@ function MenuGameState(){
 		//Draw stars without creating 2 stars objects
 		star.draw();
 		star.drawSomewhere(star.rect().x + play_button.rect().width, star.rect().y);
+
+		//FF.Filter.applyFilter(FF.Filter.GrayScale);
 	};
 
 };
