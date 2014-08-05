@@ -43,7 +43,7 @@ function Character(level, pickups, enemies, background, viewport){
 		hearts = 6,
 		lives = 3,
 		can_be_touched = true,
-		score_multipliers = { coins : 10, lives : 100 };
+		score_multiplier = { coins : 10, lives : 100 };
 
 
 	//Setup touched timer (when you crash onto an enemy, to make you blink a little)
