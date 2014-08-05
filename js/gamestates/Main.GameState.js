@@ -98,11 +98,11 @@ function MainGameState(){
 
 
 		//Get pickups
-		try{
+		//try{
 			var stuff = levels[current_level].getObjectGroup("pieces").objects;
 			for(var i in stuff){
 
-				switch(stuff[i].properties["pickup_type"]){
+				switch(stuff[i].properties["type"]){
 					case "extra_life":
 						pickups.add(new ExtraLife(stuff[i]));
 						break;
@@ -113,7 +113,7 @@ function MainGameState(){
 						break;
 				}
 			}
-		} catch(e){}
+		//} catch(e){}
 	};
 
 };
