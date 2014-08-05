@@ -14,10 +14,13 @@ function Snail(object){
 	sprite.anim_right = sprite_anim.slice(2,4);
 
 
-	var scale_up = new FF.Animation(sprite, 2000, { x : object.rect().x + parseInt(object.properties["moving_to"]) * object.rect().width });
+	var move_time = FF.Util.random(1000, 5000);
+
+
+	var scale_up = new FF.Animation(sprite, move_time, { x : object.rect().x + parseInt(object.properties["moving_to"]) * object.rect().width });
 		scale_up.addEventListener("end", function(){ scale_down.start(); });
         scale_up.addEventListener("step", function(){ sprite.setFrame(sprite.anim_right.next()); });
-	var scale_down = new FF.Animation(sprite, 2000, { x : object.rect().x });
+	var scale_down = new FF.Animation(sprite, move_time, { x : object.rect().x });
 		scale_down.addEventListener("end", function(){ scale_up.start(); });
         scale_down.addEventListener("step", function(){ sprite.setFrame(sprite.anim_left.next()); });
 
