@@ -43,7 +43,7 @@ function Character(level, pickups, enemies, background, viewport){
 		hearts = 6,
 		lives = 3,
 		can_be_touched = true,
-		score_multiplier = { coins : 10, lives : 100 };
+		score_multiplier = { coins : 10, lives : 100, kill : 300 };
 
 
 	//Setup touched timer (when you crash onto an enemy, to make you blink a little)
@@ -115,7 +115,7 @@ function Character(level, pickups, enemies, background, viewport){
 		var monsters = FF.Util.collideOneWithMany(sprite, enemies.values);
 		if(monsters.length > 0 && can_be_touched == true){
 			if(sprite.rect().y + sprite.rect().height < monsters[0].rect().y + 10 && sprite.rect().y + sprite.rect().height > monsters[0].rect().y && !can_jump)
-				vy = -parseInt(25), monsters[0].die(enemies);
+				vy = -parseInt(25), monsters[0].die(enemies), score+= score_multiplier.kill;
 			else
 				hearts--, can_be_touched = false, timer.restart();
 		}
