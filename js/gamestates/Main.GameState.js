@@ -2,7 +2,7 @@ function MainGameState(){
 
 	var levels = [], current_level = GS_LEVEL_INDEX;
 	var background, viewport, pickups, enemies, character, main_timer, hud;
-	var paused = false;
+	var paused = false, level_loaded = false;
 
 	this.setup = function(){
 
@@ -42,7 +42,7 @@ function MainGameState(){
 
 
 		//Create player head user display
-		//hud = new HUD(character,main_timer);
+		hud = new HUD(character,main_timer);
 
 	};
 
@@ -59,7 +59,7 @@ function MainGameState(){
 
 			character.update();
 			viewport.centerAround(character.getSprite());
-			//hud.update();
+			hud.update();
 		}
 	};
 
@@ -71,6 +71,8 @@ function MainGameState(){
 		for(var i = 0; i < pickups.size; i++) viewport.draw(pickups.peek(i).getSprite());
 
 		viewport.draw(character.getSprite());
+
+		hud.draw();
 	};
 
 	this.getLevelContent = function(){
