@@ -114,7 +114,7 @@ function Character(level, pickups, enemies, background, viewport){
 		//Check collisions with monsters
 		var monsters = FF.Util.collideOneWithMany(sprite, enemies.values);
 		if(monsters.length > 0 && can_be_touched == true){
-			if(sprite.rect().y + sprite.rect().height < monsters[0].rect().y + 10 && sprite.rect().y + sprite.rect().height > monsters[0].rect().y && !can_jump)
+			if(sprite.rect().y + sprite.rect().height < monsters[0].rect().y + monsters[0].rect().height && sprite.rect().y + sprite.rect().height > monsters[0].rect().y && !can_jump)
 				vy = -parseInt(25), monsters[0].die(enemies), score+= score_multiplier.kill;
 			else
 				hearts--, can_be_touched = false, timer.restart();
