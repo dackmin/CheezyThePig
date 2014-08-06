@@ -4,6 +4,11 @@ function Character(level, pickups, enemies, background, viewport){
 	FF.EventManager.call(this);
 
 
+	//Coin sound
+	var coin_sound = new FF.Sound({ sound : "res/sounds/coin.mp3" });
+	var jump_sound = new FF.Sound({ sound : "res/sounds/jump.mp3" });
+
+
 	//Create sprite
 	var sprite = new FF.SpriteSheet({ image : "res/img/charsets/player.png", frame_size : [98,66], bounds : [39,25,44,41] });
 	var animation = new FF.SpriteAnimation({frames : sprite.frames, frame_duration : 100 });
@@ -74,7 +79,7 @@ function Character(level, pickups, enemies, background, viewport){
 
 		if(FF.InputManager.pressedWithoutRepeat(["up", "gamepad_face_button_1"]))
 			if(can_jump)
-				vy = -(character_jump_height), can_jump = false;
+				vy = -(character_jump_height), can_jump = false, jump_sound.play();
 
 		vy += 1;
 
@@ -145,6 +150,7 @@ function Character(level, pickups, enemies, background, viewport){
 			switch(items[i].getType()){
 				case "coin":
 					coins++;
+					coin_sound.play();
 					score+= score_multiplier.coins;
 					break;
 				case "extra_life":

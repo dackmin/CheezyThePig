@@ -88,7 +88,7 @@ function MenuGameState(){
 		//Setup Cheezy logo
 		cheezy_logo = new FF.Sprite({ image : "res/img/logos/cheezy.png" });
 		cheezy_logo.x = FF.Util.getCenterFromItem(cheezy_logo);
-		cheezy_logo.y = FF.Render.getHeight() - foreground.rect().height;
+		cheezy_logo.y = FF.Util.getCenterFromItem(cheezy_logo, true) - 100;
 
 		cheezy_logo_scaleUp = new FF.Animation(cheezy_logo, 500, { scale : 1.05, ease : "easeInBounce" });
 		cheezy_logo_scaleDown = new FF.Animation(cheezy_logo, 500, { scale : 1, ease : "easeOutBounce" });
@@ -102,7 +102,7 @@ function MenuGameState(){
 		//Setup play button
 		play_button = new FF.Sprite({ image : "res/img/menu/new_game.png" });
 		play_button.x = FF.Util.getCenterFromItem(play_button);
-		play_button.y = cheezy_logo.rect().y + cheezy_logo.rect().height + 50;
+		play_button.y = FF.Util.getCenterFromItem(play_button, true); //cheezy_logo.rect().y + cheezy_logo.rect().height + 50;
 		play_button.addEventListener("mouseover", function(){ play_button.switchImage("res/img/menu/new_game_hover.png"); });
 		play_button.addEventListener("mouseout", function(){ play_button.switchImage("res/img/menu/new_game.png"); });
 		play_button.addEventListener("click",function(){ GAME.switchGameState(GS_MAIN, true); });
@@ -151,6 +151,10 @@ function MenuGameState(){
 		cheezy_logo_scaleUp.update();
 		cheezy_logo_scaleDown.update();
 		cheezy_logo.x = FF.Render.getWidth() / 2 - cheezy_logo.rect().width / 2;
+
+
+		//Center menu
+
 
 
 		//Update Howoto sign to check on mouse events

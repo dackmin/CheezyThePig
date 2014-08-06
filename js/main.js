@@ -20,6 +20,11 @@ assets = [
 	"res/maps/level-1-2.tmx",
 	"res/maps/level-1-3.tmx",
 
+	//SOUNDS
+	"res/sounds/coin.mp3",
+	"res/sounds/jump.mp3",
+	"res/sounds/mega_jump.mp3",
+
 	//TILESETS
 	"res/img/tilesets/main-tileset.png",
 
