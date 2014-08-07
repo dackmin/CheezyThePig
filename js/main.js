@@ -24,6 +24,7 @@ assets = [
 	"res/sounds/coin.mp3",
 	"res/sounds/jump.mp3",
 	"res/sounds/mega_jump.mp3",
+	"res/sounds/ouch.mp3",
 
 	//TILESETS
 	"res/img/tilesets/main-tileset.png",

@@ -4,10 +4,11 @@ function Character(level, pickups, enemies, background, viewport){
 	FF.EventManager.call(this);
 
 
-	//Coin sound
+	//Sounds
 	var coin_sound = new FF.Sound({ sound : "res/sounds/coin.mp3", volume : 80 });
 	var jump_sound = new FF.Sound({ sound : "res/sounds/jump.mp3", volume : 20 });
 	var mega_jump_sound = new FF.Sound({ sound : "res/sounds/mega_jump.mp3", volume : 20 });
+	var ouch_sound = new FF.Sound({ sound : "res/sounds/ouch.mp3", volume : 20 });
 
 
 	//Create sprite
@@ -123,7 +124,7 @@ function Character(level, pickups, enemies, background, viewport){
 			if(sprite.rect().y + sprite.rect().height < monsters[0].rect().y + monsters[0].rect().height && sprite.rect().y + sprite.rect().height > monsters[0].rect().y && !can_jump)
 				vy = -parseInt(25), monsters[0].die(enemies), score+= score_multiplier.kill, mega_jump_sound.play();
 			else
-				hearts--, can_be_touched = false, timer.restart();
+				hearts--, can_be_touched = false, timer.restart(), ouch_sound.play();
 		}
 
 
