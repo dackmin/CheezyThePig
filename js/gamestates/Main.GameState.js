@@ -20,6 +20,10 @@ function MainGameState(){
 		]});
 
 
+		//Create music
+		music = new FF.Music({ music : "res/sounds/music.mp3", volume : 80 });
+
+
 		//Create general viewport
 		viewport = new FF.Viewport({ max_x : levels[current_level].rect().width, max_y : levels[current_level].rect().height });
 
