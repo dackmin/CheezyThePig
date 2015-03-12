@@ -2,7 +2,7 @@ function MainGameState(){
 
 	var levels = [], current_level = GS_LEVEL_INDEX;
 	var background, viewport, pickups, enemies, character, main_timer, hud;
-	var paused = false, level_loaded = false;
+	var paused = false, level_loaded = false, that = this;
 
 	this.setup = function(){
 
@@ -21,7 +21,7 @@ function MainGameState(){
 
 
 		//Create music
-		music = new FF.Music({ music : "res/sounds/music.mp3", volume : 80 });
+		music = new FF.Music({ music : "res/sounds/coin.mp3", volume : 80 });
 
 
 		//Create general viewport
@@ -120,6 +120,11 @@ function MainGameState(){
 				}
 			}
 		} catch(e){}
+	};
+
+
+	function nextLevel(){
+
 	};
 
 };
