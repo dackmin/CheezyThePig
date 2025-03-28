@@ -7,6 +7,7 @@ function MainGameState(){
 	this.setup = function(){
 
 		//Setup levels
+		levels = [];
 		levels.push(new FF.TiledMap({ map : "res/maps/level-1-1.tmx" }));
 		levels.push(new FF.TiledMap({ map : "res/maps/level-1-2.tmx" }));
 		levels.push(new FF.TiledMap({ map : "res/maps/level-1-3.tmx" }));
@@ -36,7 +37,7 @@ function MainGameState(){
 
 		//Create our wonderful pig
 		character = new Character(levels[current_level],pickups,enemies,background,viewport);
-		character.addEventListener("endlevel", function(){ nextLevel(); });
+		character.addEventListener("endlevel", () => { this.nextLevel(); });
 		character.addEventListener("dead", function(){ FF.InputManager.resetPressedKeys(); restartLevel(); });
 
 
@@ -123,8 +124,10 @@ function MainGameState(){
 	};
 
 
-	function nextLevel(){
-
+	this.nextLevel = function () {
+		current_level++;
+		this.getLevelContent();
+		character.changeLevel();
 	};
 
 };
